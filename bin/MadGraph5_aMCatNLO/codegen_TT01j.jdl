@@ -1,0 +1,19 @@
+Universe = vanilla 
+Executable = codegen_TT01j.sh
+Arguments = TT01j addons/cards/SMEFTsim_topU3l_MwScheme_UFO/TT01j
+
+Error = condor_log/job.err.$(Cluster)-$(Process) 
+Output = condor_log/job.out.$(Cluster)-$(Process) 
+Log = condor_log/job.log.$(Cluster) 
+
+transfer_input_files = input_TT01j.tar.gz, gridpack_generation.sh, /usr/bin/unzip
+transfer_output_files = TT01j.log, TT01j_output.tar.xz
+transfer_output_remaps = "TT01j.log = TT01j_codegen.log"
++WantIOProxy=true
+        +IsGridpack=true
+        +GridpackCard = "TT01j"
+
++REQUIRED_OS = "rhel7"
+request_cpus = 1
+request_memory = 2 Gb
+Queue 1

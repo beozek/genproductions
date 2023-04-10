@@ -1,0 +1,1 @@
+../SubProcesses/P0_gg_ttx/maxamps.inc

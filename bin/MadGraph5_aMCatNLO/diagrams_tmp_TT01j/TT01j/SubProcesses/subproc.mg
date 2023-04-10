@@ -1,0 +1,16 @@
+P1_bbx_ttxg
+P1_gd_ttxd
+P1_gs_ttxs
+P1_ddx_ttxg
+P1_ssx_ttxg
+P1_gu_ttxu
+P1_gc_ttxc
+P1_uux_ttxg
+P1_ccx_ttxg
+P1_gg_ttxg
+P0_bbx_ttx
+P0_ddx_ttx
+P0_ssx_ttx
+P0_uux_ttx
+P0_ccx_ttx
+P0_gg_ttx

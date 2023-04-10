@@ -1,0 +1,46 @@
+#************************************************************
+#*                     MadGraph5_aMC@NLO                    *
+#*                                                          *
+#*                *                       *                 *
+#*                  *        * *        *                   *
+#*                    * * * * 5 * * * *                     *
+#*                  *        * *        *                   *
+#*                *                       *                 *
+#*                                                          *
+#*                                                          *
+#*         VERSION 2.6.5                 2018-02-03         *
+#*                                                          *
+#*    The MadGraph5_aMC@NLO Development Team - Find us at   *
+#*    https://server06.fynu.ucl.ac.be/projects/madgraph     *
+#*                                                          *
+#************************************************************
+#*                                                          *
+#*               Command File for MadGraph5_aMC@NLO         *
+#*                                                          *
+#*     run as ./bin/mg5_aMC  filename                       *
+#*                                                          *
+#************************************************************
+set default_unset_couplings 99
+set ignore_six_quark_processes False
+set loop_optimized_output True
+set loop_color_flows False
+set gauge unitary
+set complex_mass_scheme False
+set max_npoint_for_channel 0
+define p  =  g u c d s u~ c~ d~ s~
+define p = 21 2 4 1 3 -2 -4 -1 -3 # pass to 4 flavors
+define j = p
+define p = 21 2 4 1 3 -2 -4 -1 -3 # pass to 4 flavors
+define j = p
+set group_subprocesses False
+generate p p > t t~ NPprop=0 SMHLOOP=0 NP=1 , (t~ > b~ w- SMHLOOP=0 NP\
+prop=0 NP=0 , w- > all all SMHLOOP=0 NPprop=0 NP=0 ), (t > b w+ SMHLOO\
+P=0 NPprop=0 NP=0 , w+ > all all SMHLOOP=0 NPprop=0 NP=0 ) @0 --no_war\
+ning=duplicate
+add process p p > t t~ j NPprop=0 SMHLOOP=0 NP=1 , (t~ > b~ w- SMHLOOP\
+=0 NPprop=0 NP=0 , w- > all all SMHLOOP=0 NPprop=0 NP=0 ), (t > b w+ S\
+MHLOOP=0 NPprop=0 NP=0 , w+ > all all SMHLOOP=0 NPprop=0 NP=0 ) @1 --n\
+o_warning=duplicate
+output standalone_msF /home/beren/EFT_tutorial/genproductions/bin/MadG\
+raph5_aMCatNLO/TT01j/TT01j_gridpack/work/process/madspingrid/full_me t\
+~ t
